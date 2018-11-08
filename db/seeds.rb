@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Test data
+# Service.destroy_all
+# User.destroy_all
+# Service.create(name: "Moving helper", location: "Riaydh", price: 120, contact: "1234567", status: false, time: "11pm", user_id: 1)
+# Service.create(name: "Electronic helper", location: "Riaydh", price: 120, contact: "1234567", status: false, time: "11pm", user_id: 2)

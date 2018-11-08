@@ -1,0 +1,6 @@
+<h1>Users#show</h1>
+<% @user.services.each do |s|%>
+<%#= s.name %>
+<%= link_to s.name, service_path(s) %>
+<br>
+<% end %>

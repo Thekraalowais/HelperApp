@@ -1,0 +1,7 @@
+<h1>Services#index</h1>
+<% @services.each do |service|%>
+<%#= service.name %>
+<%= link_to service.name , service_path(service) %><br>
+<% end %>
+<br>
+<%= link_to '<button type="button">+</button>'.html_safe, new_service_path %>

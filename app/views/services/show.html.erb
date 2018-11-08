@@ -1,0 +1,29 @@
+<h1>Services#show</h1>
+<%#= console %>
+<%#= check if the user_id  in users table equal to FK user_id in the services table%>
+<% if user_signed_in? and current_user.id == @service.user_id %>
+<%= link_to 'Edit Service', edit_service_path(@service) %>
+<%= link_to 'Delete Service', service_path(@service), method: :delete %>
+<% end %>
+<br>
+<%#= TO-DO use created_at to make newest services in the top %>
+The Helper: <%= @service.user.username %>
+<%# if @service.user %>
+    <%#= @service.user.username %>
+    <%# else %>
+        <%# Deactivated User %>
+<%# end %>
+<br>
+<%= @service.name %>
+<br>
+<%= @service.location %>
+<br>
+<%= @service.price %>
+<br>
+<%= @service.contact %>
+<br>
+<%= @service.time %>
+
+<%# TO-DO
+Comments with user username
+ %>
