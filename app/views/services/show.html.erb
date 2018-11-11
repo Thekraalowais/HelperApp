@@ -6,7 +6,6 @@
 <%= link_to 'Delete Service', service_path(@service), method: :delete %>
 <% end %>
 <br>
-<%#= TO-DO use created_at to make newest services in the top %>
 The Helper: <%= @service.user.username %>
 <%# if @service.user %>
     <%#= @service.user.username %>
@@ -27,3 +26,28 @@ The Helper: <%= @service.user.username %>
 <%# TO-DO
 Comments with user username
  %>
+<br>
+<%#= console %>
+<%#= 
+  @service.id
+@service.user_id
+ %>
+ <%# @service.comments.each do |c| %>
+ <%#= c.user.username %>   <%#= time_ago_in_words(c.created_at)%> 
+<%# <br> %>
+<%#= c.body %>
+<%# <br>  %>
+ <%# end %>
+
+<section class="section comments">
+    <div class="container">
+        <h2 class="subtitle is-5"><strong><%= @service.comments.count %></strong> Comments</h2>
+        <%#= show the user and comment content from comment.html  %>
+        <%= render @service.comments %>
+        <div class="comment-form">
+            <hr />
+            <h3 class="subtitle is-3">Leave a reply</h3>
+             <%= render 'comments/form' %>
+        </div>
+    </div>
+</section>

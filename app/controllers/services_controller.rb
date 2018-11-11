@@ -2,7 +2,9 @@ class ServicesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @services = Service.all
+    @services = Service.where("name ILIKE ?", "%#{params[:search]}%")
+    # else nothing match message
+    # .order("created_at DESC")
   end
 
   def show

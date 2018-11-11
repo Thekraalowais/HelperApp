@@ -2,11 +2,11 @@
 <%= form_for @service do |s| %>
 <%#= TO-DO dropdown list %>
 <%= s.label :name %>
-<%= s.text_field :name %>
+<%= s.select :name, ['Electrical helper','Plumber helper','Moving helper', 'Delivery helper', 'Cooking helper'] %>
 <br>
 <%#= TO-DO dropdown list %>
 <%= s.label :location %>
-<%= s.text_field :location%>
+<%= s.select :location, ['Riyadh','Jeddah'] %>
 <br>
 <%= s.label :time %>
 <%= s.text_field :time %>
@@ -21,4 +21,5 @@
 <%= s.submit %>
 
 <% end %>
+
 

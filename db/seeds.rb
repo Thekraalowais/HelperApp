@@ -11,3 +11,9 @@
 # User.destroy_all
 # Service.create(name: "Moving helper", location: "Riaydh", price: 120, contact: "1234567", status: false, time: "11pm", user_id: 1)
 # Service.create(name: "Electronic helper", location: "Riaydh", price: 120, contact: "1234567", status: false, time: "11pm", user_id: 2)
+# Comment.destroy_all
+# Test data
+# Comment.create(body: "Great helper", service_id: 17, user_id: 26)
+# Comment.create(body: "good helper", service_id: 17, user_id: 26)
+# Comment.create(body: "bad helper", service_id: 16, user_id: 25)
+# Comment.create(body: "test helper", service_id: 16, user_id: 26)

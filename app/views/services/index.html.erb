@@ -1,7 +1,21 @@
 <h1>Services#index</h1>
+  
+<%# search form %>
+<%= form_tag services_path, method: :get do %>
+<%= text_field_tag :search, params[:search]  %>
+<%= submit_tag "Search" %>
+<% end  %>
+
 <% @services.each do |service|%>
-<%#= service.name %>
+<%#= service.created_at %>
 <%= link_to service.name , service_path(service) %><br>
+        <%= service.comments.count %>Comments
+<br>
 <% end %>
 <br>
 <%= link_to '<button type="button">+</button>'.html_safe, new_service_path %>
+  
+  <a id="scale-demo" href="new_service_path" class="btn-floating btn-large scale-transition scale-out">
+    <i class="material-icons">add</i>
+  </a>
+
