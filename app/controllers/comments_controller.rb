@@ -5,6 +5,12 @@ class CommentsController < ApplicationController
     @service = Service.find(params[:service_id])
     # we use new to make some changes (which is user id will changes each time when user comment) before create the comment
     @comment = @service.comments.new(comment_params)
+    # raise "dcdv"
+    # >> >>  @comment.user_id
+# => nil
+# >>  @comment.service_id
+# => 19
+# we need to get user id then pass it to the comment instance variable otherwise it will return nil
     @comment.user_id = current_user.id
     @comment.save
     redirect_to service_path(@service)
