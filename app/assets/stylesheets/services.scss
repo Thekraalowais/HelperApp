@@ -1,3 +1,27 @@
 // Place all the styles related to the Services controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  font-family: monospace;
+}
+nav {
+  background: #16161d;
+  color: #f8f8ff;
+  height: 80px;
+  line-height: 80px;
+  display: flex;
+  //   text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 0 5px #16161d;
+}
+// nav a,
+// nav span {
+//   flex-grow: 1;
+//   color: #f8f8ff;
+//   background: #16161d;
+//   transition: all 0.3s;
+//   text-decoration-color: dodgerblue;
+// }

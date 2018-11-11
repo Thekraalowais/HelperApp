@@ -13,27 +13,36 @@
   </head>
 
 
-  <body>
-  
-  
-
-  <p class="notice"><%= notice %></p>
+  <body >
+    <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-<nav class="blue-grey darken-2">
+<nav>
+
 <%= link_to "Services", services_path %>
 
  <% if user_signed_in? %>
- <%#= link_to "New Service", new_service_path %>
-<%#= link_to "View Profile", user_path(current_user) %>
 <%= link_to "Log out", destroy_user_session_path, method: :delete %>
 <%= link_to "My services", user_path(current_user) %>
 <%= link_to "Setting", edit_user_registration_path(current_user) %>
+
 <% else %>
+
 <%= link_to "Login", new_user_session_path %>
 <%= link_to "Sign Up", new_user_registration_path %>
+
 <% end %>
+    <div class="nav-wrapper">
+    <%#= 
+<img src="" alt="">
+%>
+      <form>
+          <%= form_tag services_path, method: :get do %>
+<%= text_field_tag :search, params[:search]  %>
+<%#= submit_tag "Search" %>
+<% end  %>
+      </form>
+    </div>
 </nav>
     <%= yield %>
-
   </body>
 </html>
