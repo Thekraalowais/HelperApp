@@ -1,7 +1,15 @@
 <div class="container">
-  <%= image_tag("about.png", :class => "intro") %>
+  <form  class="search-form field input-field" >
+    <%= form_tag services_path, method: :get do %>
+      <%= text_field_tag :search, params[:search], :placeholder => "SEARCH FOR SERVICE"%>
+      <%#= submit_tag "Search" %>
+    <% end  %>
+  </form>
+  <div>
+    <%= image_tag("home.png", :class => "intro") %>
+  </div>
 </div>
-<div class="services row top-marging">
+<div class="services row  top-marging">
   <% @services.each do |service|%>
     <%#= service.created_at %>
     <div class="row">
@@ -12,13 +20,13 @@
             <% if service.image.file %>
               <%= cl_image_tag service.image, :size => "250x180" %>
             <% else %>
-              <%= image_tag("coin2.jpg", size: "250x180") %>
+              <%= image_tag("default.png", size: "250x180") %>
             <% end %>
           </div>
           <div class="card-content">
             <%= link_to service.name , service_path(service) %><br>
           </div>
-          <div><%= service.comments.count %>Comments</div>
+          <div> <%= pluralize service.comments.length,"comment" %></div>
         </div>
       </div>
     <% end %>

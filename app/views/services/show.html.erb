@@ -1,56 +1,60 @@
 <%#= console %>
 <%#= check if the user_id  in users table equal to FK user_id in the services table%>
-<div class="row">
-  <div class="col s12 m7">
-    <div class="card">
-      <div class="card-image">
-        <% if @service.image.file %>
-          <%= cl_image_tag @service.image %>
-        <% else %>
-          <%= image_tag("coin2.jpg", :size => "100x100") %>
-        <% end %>
-      </div>
-      <div class="card-content">
-        <p>
-          The Helper username: <%= @service.user.username %>
-        </p>
-        <%#= should use .file to check if the image file is nil or not  %>
-        <%#=   @service.image
+<div class="login top-marging">
+  <div class="row">
+    <div class="col s12 m7">
+      <div class="card">
+        <div class="card-image">
+          <% if @service.image.file %>
+            <%= cl_image_tag @service.image %>
+          <% else %>
+            <%= image_tag("default.png", :size => "250x180") %>
+          <% end %>
+        </div>
+        <div class="card-content">
+          <p>
+            Helper username: <%= @service.user.username %>
+          </p>
+          <%#= should use .file to check if the image file is nil or not  %>
+          <%#=   @service.image
 => #<ImageUploader:0x00007f8501c002a0 @model=#<Service id: 60, name: "Electrical helper", location: "Riyadh", price: 100, contact: "sdf", time: "2 hours", created_at: "2018-11-13 07:41:03", updated_at: "2018-11-13 07:41:03", user_id: 26, image: nil>, @mounted_as=:image, @file=nil, @filename=nil, @cache_id=nil, @versions=nil>  %>
-        <%#= console %>
-        <p>
-          <%= @service.name %>
-        </p>
-        <p>
-          <%= @service.location %>
-        </p>
-        <p>
-          <%= @service.price %>
-        </p>
-        <p>
-          <%= @service.contact %>
-        </p>
-        <p>
-          <%= @service.time %>
-        </p>
-        <% if user_signed_in? and current_user.id == @service.user_id %>
-          <%= link_to image_tag("edit.png", :size => "30x30"), edit_service_path(@service) %>
-          <%= link_to image_tag("delete.png", :size => "30x30"), service_path(@service), method: :delete %>
-        <% end %>
+          <%#= console %>
+          <p>
+            Service: <%= @service.name %>
+          </p>
+          <p>
+            Location: <%= @service.location %>
+          </p>
+          <p>
+            Price: <%= @service.price %>
+          </p>
+          <p>
+            Contact number: <%= @service.contact %>
+          </p>
+          <p>
+            Duration: <%= @service.time %>
+          </p>
+          <div class="edit">
+            <% if user_signed_in? and current_user.id == @service.user_id %>
+              <%= link_to image_tag("edit.png", :size => "30x30"), edit_service_path(@service) %>
+              <%= link_to image_tag("delete.png", :size => "30x30"), service_path(@service), method: :delete %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="col s12 m7">
-    <div class="card">
-      <h3 class="field">
-        <%= @service.comments.count %>Comments</h3>
-      <%#= show the user and comment content from comment.html  %>
-      <%= render @service.comments %>
-      <hr/>
-      <p class="field">Leave a reply</p>
-      <%= render 'comments/form' %>
+  <div class="row">
+    <div class="col s12 m7">
+      <div class="card">
+        <%#= console %>
+        <h3><%= pluralize @service.comments.length,"comment" %></h3>
+        <%#= show the user and comment content from comment.html  %>
+        <%= render @service.comments %>
+        <hr/>
+        <p class="field">Leave a reply</p>
+        <%= render 'comments/form' %>
+      </div>
     </div>
   </div>
 </div>

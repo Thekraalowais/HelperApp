@@ -1,6 +1,8 @@
 <p class="field">
   <strong><%= comment.user.username %>:</strong>
   <%= comment.body %>
+  <% if user_signed_in? and current_user.id == comment.user_id %>
+    <%= link_to 'Delete', [comment.service, comment],
+                  method: :delete, class: "actions waves-effect btn red", data: { confirm: 'Are you sure?' } %>
+  <% end %>
 </p>
-<%#= link_to 'Delete', [comment.service, comment],
-                  method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>

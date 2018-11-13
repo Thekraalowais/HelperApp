@@ -13,12 +13,6 @@
  *= require_tree .
  *= require_self
  */
-/* input {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #ebebeb;
-  color: black;
-} */
 
 button {
   margin: 50px;
@@ -27,14 +21,7 @@ button {
 
 nav {
   z-index: 2;
-  margin-bottom: 250px;
-}
-
-.search-form > input {
-  padding-left: 25px;
-  width: 150px;
-  display: inline-block;
-  color: white;
+  /* margin-bottom: 250px; */
 }
 
 .nav-items > li > a,
@@ -43,20 +30,33 @@ nav {
   float: left;
 }
 
-.top-marging {
+.top-marging,
+.edit {
   margin-top: 18px;
 }
 
 .container {
-  height: 615px;
+  height: 632px;
   width: 100%;
+  position: relative;
 }
-.field {
-  width: 500px;
+.intro {
+  width: 100%;
+  height: 615px;
 }
+.search-form > input {
+  /* padding-left: 25px; */
+  /* width: 50px; */
+  /* display: inline-block; */
+  color: black;
+  position: absolute;
+  top: 250px;
+  left: 800px;
+}
+
 .login {
   position: relative;
-  left: 500px;
+  left: 300px;
 }
 
 [type="checkbox"]:not(:checked),
@@ -67,11 +67,7 @@ nav {
   width: auto;
 }
 .error-message {
-  margin-top: 100px;
-}
-.intro {
-  width: 100%;
-  height: 615px;
+  margin-top: 80px;
 }
 
 /* label underline focus color */
@@ -89,6 +85,7 @@ footer {
 }
 .field {
   margin-left: 10px;
+  width: 500px;
 }
 a {
   color: black;

@@ -18,19 +18,6 @@
       <div>
         <ul id="nav-mobile" class="right hide-on-med-and-down nav-items">
           <li>
-            <%= image_tag("search.png", size: "20x20") %>
-          </li>
-          <li>
-            <div >
-              <form  class="search-form">
-                <%= form_tag services_path, method: :get do %>
-                  <%= text_field_tag :search, params[:search] %>
-                  <%#= submit_tag "Search" %>
-                <% end  %>
-              </form>
-            </div>
-          </li>
-          <li>
             <%= link_to "Services", services_path  %>
           </li>
           <% if user_signed_in? %>

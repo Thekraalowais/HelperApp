@@ -16,12 +16,13 @@ class CommentsController < ApplicationController
     redirect_to service_path(@service)
   end
 
-  # def destroy
-  #   @service = Service.find(params[:service_id])
-  #   @comment = @service.comments.find(params[:service_id])
-  #   @comment.destroy
-  #   redirect_to service_path(@service)
-  # end
+  def destroy
+    @service = Service.find(params[:service_id])
+    @comment = @service.comments.find(params[:id])
+      @comment.user_id = current_user.id
+    @comment.destroy
+    redirect_to service_path(@service)
+  end
 
   private
 
