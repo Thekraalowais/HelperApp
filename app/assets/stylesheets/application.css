@@ -30,7 +30,7 @@ nav {
   margin-bottom: 250px;
 }
 
-.search-form > {
+.search-form > input {
   padding-left: 25px;
   width: 150px;
   display: inline-block;
@@ -89,4 +89,7 @@ footer {
 }
 .field {
   margin-left: 10px;
+}
+a {
+  color: black;
 }
