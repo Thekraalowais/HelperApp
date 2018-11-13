@@ -1,29 +1,28 @@
-  
 
-
-<div class="services row">
+<div class="services row top-marging">
 <% @services.each do |service|%>
 <%#= service.created_at %>
 
    <div class="col s4" >
-
        <div class="card small card-panel hoverable" >
 
 <div class="card-content" >
-
+<div>
+  <%= cl_image_tag service.image , :size => "250x180"%>
+  </div>
+  <div>
 <%= link_to service.name , service_path(service) %><br>
-        <%= service.comments.count %>Comments
+</div>
+<div>       <%= service.comments.count %>Comments
+</div> 
         </div>
           </div>
             </div>
-
         <% end %>
   </div>
 
-<%#= link_to '<button type="button">+</button>'.html_safe, new_service_path %>
    <%= link_to new_service_path do %>
-            <button class="btn-floating btn-large waves-effect black">+</button>
-
+            <button class="btn-floating btn-large waves-effect black fixed-action-btn">+</button>
 <% end %>
 
 

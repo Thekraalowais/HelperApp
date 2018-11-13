@@ -1,25 +1,46 @@
-<h1>Service Form</h1>
 <%= form_for @service do |s| %>
+   <div class="row">
+    <form class="col s12">
 <%#= TO-DO dropdown list %>
-<%= s.label :name %>
-<%= s.select :name, ['Electrical helper','Plumber helper','Moving helper', 'Delivery helper', 'Cooking helper'] %>
-<br>
+ <div class="row">
+ <div class="input-field col s6">
+<%#= s.label :name %>
+Service: <%= s.select :name, ['Electrical helper','Plumber helper','Moving helper', 'Delivery helper', 'Cooking helper'] %>
+   </div>
+      </div>
 <%#= TO-DO dropdown list %>
-<%= s.label :location %>
-<%= s.select :location, ['Riyadh','Jeddah'] %>
-<br>
+ <div class="row">
+ <div class="input-field col s6">
+<%#= s.label :location %>
+Location: <%= s.select :location, ['Riyadh','Jeddah'] %>
+ </div>
+      </div>
+ <div class="row">
+ <div class="input-field col s6">
 <%= s.label :time %>
-<%= s.text_field :time %>
-<br>
-<%#= DONE TO-DO just input numbers  %>
+<%= s.text_field :time , :required => true %>
+ </div>
+      </div>
+<%#= DONE TO-DO  input numbers  %>
+ <div class="row">
+ <div class="input-field col s6">
 <%= s.label :price %>
-<%= s.number_field :price %>
-<br>
+<%= s.number_field :price, :required => true %>
+ </div>
+      </div>
+       <div class="row">
+ <div class="input-field col s6">
 <%= s.label :contact %>
-<%= s.text_field :contact %>
-<br>
+<%= s.text_field :contact, :required => true %>
+ </div>
+      </div>
+      
+      <div>
+  <%= s.label :image %>
+  <%= s.file_field :image %>
+</div>
 <%= s.submit %>
-
+   </form>
+  </div>
 <% end %>
-
-
+</div>

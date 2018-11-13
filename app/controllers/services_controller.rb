@@ -2,9 +2,9 @@ class ServicesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @services = Service.where("name ILIKE ?", "%#{params[:search]}%")
+    @services = Service.all.where("name ILIKE ?", "%#{params[:search]}%").order("created_at DESC")
     # else nothing match message
-    # .order("created_at DESC")
+ 
   end
 
   def show
@@ -40,6 +40,6 @@ class ServicesController < ApplicationController
   private
 
   def service_params
-    params.require(:service).permit(:name, :location, :price, :contact, :time, :user_id)
+    params.require(:service).permit(:name, :location, :price, :contact, :time, :user_id, :image)
   end
 end

@@ -4,45 +4,64 @@
     <title>HelperApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+      <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
   </head>
 
 
-  <body >
-    <p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<nav>
+  <body>
 
-<%= link_to "Services", services_path %>
-
- <% if user_signed_in? %>
-<%= link_to "Log out", destroy_user_session_path, method: :delete %>
-<%= link_to "My services", user_path(current_user) %>
-<%= link_to "Setting", edit_user_registration_path(current_user) %>
-
-<% else %>
-
-<%= link_to "Login", new_user_session_path %>
-<%= link_to "Sign Up", new_user_registration_path %>
-
-<% end %>
-    <div class="nav-wrapper">
-    <%#= 
-<img src="" alt="">
-%>
-      <form>
+ <nav class="nav-wrapper">
+    <div>
+     <form class="search-form">
           <%= form_tag services_path, method: :get do %>
 <%= text_field_tag :search, params[:search]  %>
 <%#= submit_tag "Search" %>
 <% end  %>
       </form>
-    </div>
-</nav>
-    <%= yield %>
+
+      <ul id="nav-mobile" class="right hide-on-med-and-down nav-items">
+        <li>
+        <%= link_to "Services", services_path  %>
+        </li>
+         <% if user_signed_in? %>
+          <li>
+<%= link_to "Log out", destroy_user_session_path, method: :delete %>
+ </li>
+     <li>
+<%= link_to "My services", user_path(current_user) %>
+ </li>
+   <li>
+<%= link_to "Setting", edit_user_registration_path(current_user) %>
+ </li>
+
+<% else %>
+   <li>
+<%= link_to "Login", new_user_session_path %>
+   </li>
+   <li>
+<%= link_to "Sign Up", new_user_registration_path %>
+   </li>
+<% end %>
+ </ul>   
+</div>
+
+  </nav>
+
+    <p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+
+ <%= yield %>
+  
   </body>
 </html>

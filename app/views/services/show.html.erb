@@ -1,52 +1,36 @@
 <%#= console %>
 <%#= check if the user_id  in users table equal to FK user_id in the services table%>
-<% if user_signed_in? and current_user.id == @service.user_id %>
-<%= link_to 'Edit Service', edit_service_path(@service) %>
-<%= link_to 'Delete Service', service_path(@service), method: :delete %>
-<% end %>
-<br>
-The Helper: <%= @service.user.username %>
-<%# if @service.user %>
-    <%#= @service.user.username %>
-    <%# else %>
-        <%# Deactivated User %>
-<%# end %>
-<br>
+<div class="services row top-marging container">
+
+
+
+The Helper username: <%= @service.user.username %>
+
+<%= cl_image_tag @service.image %>
+
 <%= @service.name %>
-<br>
+
 <%= @service.location %>
-<br>
+
 <%= @service.price %>
-<br>
+
 <%= @service.contact %>
-<br>
+
 <%= @service.time %>
 
-<%# TO-DO
-Comments with user username
- %>
-<br>
-<%#= console %>
-<%#= 
-  @service.id
-@service.user_id
- %>
- <%# @service.comments.each do |c| %>
- <%#= c.user.username %>   <%#= time_ago_in_words(c.created_at)%> 
-<%# <br> %>
-<%#= c.body %>
-<%# <br>  %>
- <%# end %>
+<% if user_signed_in? and current_user.id == @service.user_id %>
+<%= link_to image_tag("edit.png"), edit_service_path(@service) %>
+<%= link_to image_tag("delete.png"), service_path(@service), method: :delete %>
+<% end %>
+</div>
 
-<section class="section comments">
     <div class="container">
         <h2 class="subtitle is-5"><strong><%= @service.comments.count %></strong> Comments</h2>
         <%#= show the user and comment content from comment.html  %>
         <%= render @service.comments %>
         <div class="comment-form">
-            <hr />
-            <h3 class="subtitle is-3">Leave a reply</h3>
+            <hr/>
+            <p class="subtitle is-3">Leave a reply</p>
              <%= render 'comments/form' %>
         </div>
     </div>
-</section>
