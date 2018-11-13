@@ -23,19 +23,18 @@
 button {
   margin: 50px;
   float: right;
-
-  /* z-index: 1; */
 }
 
 nav {
-  z-index: 5;
+  z-index: 2;
   margin-bottom: 250px;
 }
 
-.search-form {
+.search-form > {
   padding-left: 25px;
   width: 150px;
   display: inline-block;
+  color: white;
 }
 
 .nav-items > li > a,
@@ -45,14 +44,12 @@ nav {
 }
 
 .top-marging {
-  margin-top: 120px;
+  margin-top: 18px;
 }
-/* .large {
-  
-} */
+
 .container {
-  background-color: blue;
-  margin-bottom: 50px;
+  height: 615px;
+  width: 100%;
 }
 .field {
   width: 500px;
@@ -60,4 +57,36 @@ nav {
 .login {
   position: relative;
   left: 500px;
+}
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: relative;
+  opacity: 1;
+  pointer-events: inherit;
+  width: auto;
+}
+.error-message {
+  margin-top: 100px;
+}
+.intro {
+  width: 100%;
+  height: 615px;
+}
+
+/* label underline focus color */
+.input-field input[type="text"]:not(.browser-default):focus:not([readonly]) {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+footer {
+  height: 100px;
+}
+.actions {
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.field {
+  margin-left: 10px;
 }

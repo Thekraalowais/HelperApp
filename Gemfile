@@ -7,6 +7,8 @@ gem 'jquery-rails'
 gem 'rails', '~> 5.2.1'
 gem "devise"
 
+gem 'htmlbeautifier'
+
 gem "cloudinary"
 # send files 
 gem "rest-client", "~> 2.0"

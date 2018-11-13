@@ -1,46 +1,49 @@
 <%= form_for @service do |s| %>
-   <div class="row">
-    <form class="col s12">
-<%#= TO-DO dropdown list %>
- <div class="row">
- <div class="input-field col s6">
-<%#= s.label :name %>
-Service: <%= s.select :name, ['Electrical helper','Plumber helper','Moving helper', 'Delivery helper', 'Cooking helper'] %>
-   </div>
+  <form class="col s12">
+    <%#= TO-DO dropdown list %>
+    <div class="row">
+      <div class="input-field col s6">
+        <%#= s.label :name %>
+        Service: <%= s.select :name, ['Electrical helper','Plumber helper','Moving helper', 'Delivery helper', 'Cooking helper'] %>
       </div>
-<%#= TO-DO dropdown list %>
- <div class="row">
- <div class="input-field col s6">
-<%#= s.label :location %>
-Location: <%= s.select :location, ['Riyadh','Jeddah'] %>
- </div>
+    </div>
+    <%#= TO-DO dropdown list %>
+    <div class="row">
+      <div class="input-field col s6">
+        <%#= s.label :location %>
+        Location: <%= s.select :location, ['Riyadh','Jeddah'] %>
       </div>
- <div class="row">
- <div class="input-field col s6">
-<%= s.label :time %>
-<%= s.text_field :time , :required => true %>
- </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= s.label :time %>
+        <%= s.text_field :time , :required => true %>
       </div>
-<%#= DONE TO-DO  input numbers  %>
- <div class="row">
- <div class="input-field col s6">
-<%= s.label :price %>
-<%= s.number_field :price, :required => true %>
- </div>
+    </div>
+    <%#= DONE TO-DO  input numbers  %>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= s.label :price %>
+        <%= s.number_field :price, :required => true %>
       </div>
-       <div class="row">
- <div class="input-field col s6">
-<%= s.label :contact %>
-<%= s.text_field :contact, :required => true %>
- </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= s.label :contact %>
+        <%= s.text_field :contact, :required => true %>
       </div>
-      
-      <div>
-  <%= s.label :image %>
-  <%= s.file_field :image %>
-</div>
-<%= s.submit %>
-   </form>
-  </div>
+    </div>
+    <div class="row">
+      <div class="file-field col s6">
+        <div class="btn blue-grey lighten-2">
+          <span>Image</span>
+          <%= s.file_field :image %>
+        </div>
+      </div>
+    </div>
+    <div class="actions waves-effect btn blue-grey lighten-2">
+      <%= s.submit %>
+    </div>
+  </form>
 <% end %>
 </div>

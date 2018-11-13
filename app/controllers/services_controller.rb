@@ -1,13 +1,15 @@
 class ServicesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-
+# before_create :set_default_image
+# has_attached_file :image, default_url: "coin2.jpg"
   def index
     @services = Service.all.where("name ILIKE ?", "%#{params[:search]}%").order("created_at DESC")
     # else nothing match message
- 
+
   end
 
   def show
+    # raise "te"
     @service = Service.find_by_id(params[:id])
   end
 

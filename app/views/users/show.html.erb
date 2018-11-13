@@ -1,6 +1,12 @@
-<h1 class="top-marging">Users#show</h1>
-<% @user.services.each do |s|%>
-<%#= s.name %>
-<%= link_to s.name, service_path(s) %>
-<br>
-<% end %>
+<div class="services row top-marging">
+  <% @user.services.each do |s|%>
+    <%#= s.name %>
+    <div class="col s4">
+      <div class="card card-panel hoverable" >
+        <div class="card-content" >
+          <%= link_to s.name, service_path(s) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

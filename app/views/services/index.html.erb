@@ -1,28 +1,29 @@
-
-<div class="services row top-marging">
-<% @services.each do |service|%>
-<%#= service.created_at %>
-
-   <div class="col s4" >
-       <div class="card small card-panel hoverable" >
-
-<div class="card-content" >
-<div>
-  <%= cl_image_tag service.image , :size => "250x180"%>
-  </div>
-  <div>
-<%= link_to service.name , service_path(service) %><br>
+<div class="container">
+  <%= image_tag("about.png", :class => "intro") %>
 </div>
-<div>       <%= service.comments.count %>Comments
-</div> 
-        </div>
+<div class="services row top-marging">
+  <% @services.each do |service|%>
+    <%#= service.created_at %>
+    <div class="row">
+      <div class="col s4">
+        <div class="card small card-panel hoverable" >
+          <div class="card-image">
+            <%#= cl_image_tag service.image , :size => "250x180"%>
+            <% if service.image.file %>
+              <%= cl_image_tag service.image, :size => "250x180" %>
+            <% else %>
+              <%= image_tag("coin2.jpg", size: "250x180") %>
+            <% end %>
           </div>
-            </div>
-        <% end %>
+          <div class="card-content">
+            <%= link_to service.name , service_path(service) %><br>
+          </div>
+          <div><%= service.comments.count %>Comments</div>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-   <%= link_to new_service_path do %>
-            <button class="btn-floating btn-large waves-effect black fixed-action-btn">+</button>
+</div>
+<%= link_to new_service_path do %>
+  <button class="btn-floating btn-large black fixed-action-btn">+</button>
 <% end %>
-
-

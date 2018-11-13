@@ -1,36 +1,57 @@
 <%#= console %>
 <%#= check if the user_id  in users table equal to FK user_id in the services table%>
-<div class="services row top-marging container">
-
-
-
-The Helper username: <%= @service.user.username %>
-
-<%= cl_image_tag @service.image %>
-
-<%= @service.name %>
-
-<%= @service.location %>
-
-<%= @service.price %>
-
-<%= @service.contact %>
-
-<%= @service.time %>
-
-<% if user_signed_in? and current_user.id == @service.user_id %>
-<%= link_to image_tag("edit.png"), edit_service_path(@service) %>
-<%= link_to image_tag("delete.png"), service_path(@service), method: :delete %>
-<% end %>
-</div>
-
-    <div class="container">
-        <h2 class="subtitle is-5"><strong><%= @service.comments.count %></strong> Comments</h2>
-        <%#= show the user and comment content from comment.html  %>
-        <%= render @service.comments %>
-        <div class="comment-form">
-            <hr/>
-            <p class="subtitle is-3">Leave a reply</p>
-             <%= render 'comments/form' %>
-        </div>
+<div class="row">
+  <div class="col s12 m7">
+    <div class="card">
+      <div class="card-image">
+        <% if @service.image.file %>
+          <%= cl_image_tag @service.image %>
+        <% else %>
+          <%= image_tag("coin2.jpg", :size => "100x100") %>
+        <% end %>
+      </div>
+      <div class="card-content">
+        <p>
+          The Helper username: <%= @service.user.username %>
+        </p>
+        <%#= should use .file to check if the image file is nil or not  %>
+        <%#=   @service.image
+=> #<ImageUploader:0x00007f8501c002a0 @model=#<Service id: 60, name: "Electrical helper", location: "Riyadh", price: 100, contact: "sdf", time: "2 hours", created_at: "2018-11-13 07:41:03", updated_at: "2018-11-13 07:41:03", user_id: 26, image: nil>, @mounted_as=:image, @file=nil, @filename=nil, @cache_id=nil, @versions=nil>  %>
+        <%#= console %>
+        <p>
+          <%= @service.name %>
+        </p>
+        <p>
+          <%= @service.location %>
+        </p>
+        <p>
+          <%= @service.price %>
+        </p>
+        <p>
+          <%= @service.contact %>
+        </p>
+        <p>
+          <%= @service.time %>
+        </p>
+        <% if user_signed_in? and current_user.id == @service.user_id %>
+          <%= link_to image_tag("edit.png", :size => "30x30"), edit_service_path(@service) %>
+          <%= link_to image_tag("delete.png", :size => "30x30"), service_path(@service), method: :delete %>
+        <% end %>
+      </div>
     </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12 m7">
+    <div class="card">
+      <h3 class="field">
+        <%= @service.comments.count %>Comments</h3>
+      <%#= show the user and comment content from comment.html  %>
+      <%= render @service.comments %>
+      <hr/>
+      <p class="field">Leave a reply</p>
+      <%= render 'comments/form' %>
+    </div>
+  </div>
+</div>
+</div>
