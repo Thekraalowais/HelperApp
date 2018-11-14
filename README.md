@@ -8,10 +8,6 @@ Available services:
 
 The app include devise and cloudinary.
 
-## Database schema:
-
-![schema](app/assets/images/schema.png)
-
 ## App link:
 
 [Helper App Link](https://arcane-reaches-38989.herokuapp.com/)
