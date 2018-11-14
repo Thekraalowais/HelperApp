@@ -4,8 +4,6 @@ class ServicesController < ApplicationController
 # has_attached_file :image, default_url: "coin2.jpg"
   def index
     @services = Service.all.where("name ILIKE ?", "%#{params[:search]}%").order("created_at DESC")
-    # else nothing match message
-
   end
 
   def show

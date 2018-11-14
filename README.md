@@ -1,24 +1,30 @@
-# README
+# Helper App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Home page](app/assets/images/homepage.png)
 
-Things you may want to cover:
+Available services:
+1-Electrical helper
+2-Plumber helper 3-Moving helper 4-Delivery helper 5-Cooking helper
 
-- Ruby version
+HelperApp was built using Ruby on rails with three models. The app include devise and cloudinary.
 
-- System dependencies
+## Database schema:
 
-- Configuration
+![schema](app/assets/images/schema.png)
 
-- Database creation
+## App link:
 
-- Database initialization
+[Helper App Link](https://arcane-reaches-38989.herokuapp.com/)
 
-- How to run the test suite
+## Github link:
 
-- Services (job queues, cache servers, search engines, etc.)
+[Github link](https://github.com/Thekraalowais/HelperApp)
 
-- Deployment instructions
+## Credits
 
-- ........
+Jack, Moath.
+
+## useful links
+
+[Illustration images](https://lukaszadam.com/illustrations/),
+[materialize](https://materializecss.com/color.html)
