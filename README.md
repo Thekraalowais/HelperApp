@@ -6,7 +6,7 @@ Available services:
 1-Electrical helper
 2-Plumber helper 3-Moving helper 4-Delivery helper 5-Cooking helper
 
-HelperApp was built using Ruby on rails with three models. The app include devise and cloudinary.
+The app include devise and cloudinary.
 
 ## Database schema:
 
