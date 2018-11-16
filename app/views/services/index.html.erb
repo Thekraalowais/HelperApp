@@ -22,7 +22,7 @@
             <%# else %>
             <%#= image_tag("default.png", size: "250x180") %>
             <%# end %>
-            <%= cl_image_tag service.image.url %>
+            <%= image_tag service.image.url %>
           </div>
           <div class="card-content">
             <%= link_to service.name , service_path(service) %><br>
