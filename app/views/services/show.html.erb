@@ -6,7 +6,10 @@
       <div class="card">
         <div class="card-image">
           <%# if @service.image.file %>
+          <%#= console %>
+          <%# An upload call returns a Hash with (url key) within it  %>
           <%= image_tag @service.image.url %>
+          <%#= image_tag @service.image.default_url %>
           <%# else %>
           <%#= image_tag("default.png", :size => "250x180") %>
           <%# end %>
