@@ -3,11 +3,11 @@
 ![Home page](app/assets/images/homepage.png)
 
 Available services:
-- 1-Electrical helper
-- 2-Plumber helper 
-- 3-Moving helper 
-- 4-Delivery helper 
-- 5-Cooking helper
+- Electrical helper
+- Plumber helper 
+- Moving helper 
+- Delivery helper 
+- Cooking helper
 
 ## Technologies used:
 
