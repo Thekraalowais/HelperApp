@@ -19,10 +19,6 @@ Available services:
 [Helper App Link](https://arcane-reaches-38989.herokuapp.com/)
 
 
-## Credits
-
-Jack, Moath.
-
 ## useful links
 
 [Illustration images](https://lukaszadam.com/illustrations/),
